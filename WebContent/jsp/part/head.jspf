@@ -31,7 +31,7 @@
 				<ul class="flex height-100p">
 					<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="flex flex-ai-c height-100p">Home</a></li>
 					<li><a href="#" class="flex flex-ai-c height-100p">Articles</a></li>
-					<li><a href="${pageContext.request.contextPath}/home/aboutMe" class="flex flex-ai-c height-100p">AboutMe</a></li>
+					<li><a href="${pageContext.request.contextPath}/s/home/aboutMe" class="flex flex-ai-c height-100p">AboutMe</a></li>
 					<li><a href="#" class="flex flex-ai-c height-100p">SNS</a>
 						<ul>
 							<li><a class="block" href="https://github.com/gudcjfdn13" target="_blank">GITHUB</a></li>
@@ -57,7 +57,7 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="block">Home</a></li>
 				<li><a href="#" class="block">Articles</a></li>
-				<li><a href="${pageContext.request.contextPath}/home/aboutMe" class="block">About Me</a></li>
+				<li><a href="${pageContext.request.contextPath}/s/home/aboutMe" class="block">About Me</a></li>
 				<li><a href="#" class="block">SNS</a>
 					<ul>
 							<li><a class="block" href="https://github.com/gudcjfdn13" target="_blank">GITHUB</a></li>
