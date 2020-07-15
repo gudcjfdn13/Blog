@@ -1,3 +1,4 @@
+
 html {
   /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
   font-family: "Roboto", "Noto Sans KR", sans-serif;
@@ -419,12 +420,17 @@ label[for] {
   left: 0;
   width: 100%;
   height: 50px;
+  padding-left : 10px;
+  padding-right: 10px;
+}
+
+.mobile-top-bar .logo {
+  font-size : 1.4rem
 }
 
 .mobile-top-bar .btn-toggle-mobile-side-bar {
-  width: 200px;
-  height: 200px;
-  border:10px solid red;
+  width: 20px;
+  height: 20px;
   background-color: black;
   position: relative;
 }
@@ -471,3 +477,52 @@ label[for] {
   }
 }
 /* 모바일탑바 끝 */
+
+/* 모바일 사이드 바 */
+
+.mobile-side-bar {
+  position: fixed;
+  background-color: black;
+  color: white;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom : 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s;
+}
+
+.mobile-side-bar.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mobile-side-bar > .menu-box-1 ul > li > a {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.mobile-side-bar > .menu-box-1 ul > li > a:not(:only-child):after {
+  content: "[+]";
+}
+
+.mobile-side-bar > .menu-box-1 ul > li:hover > a:not(:only-child):after{
+  content: "[-]";
+}
+
+.mobile-side-bar > .menu-box-1 ul > li:hover > a {
+  background-color: white;
+  color :black;
+}
+
+.mobile-side-bar > .menu-box-1 > ul ul {
+  display: none;
+  background-color: #222222;
+}
+
+.mobile-side-bar > .menu-box-1 ul > li:hover > ul {
+  display: block;
+}
