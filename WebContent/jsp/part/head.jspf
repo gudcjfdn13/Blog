@@ -7,15 +7,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="/blog/resource/css/common.css">
-<link rel="stylesheet" href="/blog/resource/css/home/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/common.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/home/main.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/blog/resource/js/home/main.js"></script>
-<script src="/blog/resource/js/common.js"></script>
+<script src="${pageContext.request.contextPath}/resource/js/home/main.js"></script>
+<script src="${pageContext.request.contextPath}/resource/js/common.js"></script>
 
 </head>
 
@@ -23,15 +23,15 @@
 
 	<div class="top-bar visible-on-md-up">
 		<div class="con height-100p flex flex-jc-sb">
-			<a href="/blog/jsp/home/main.jsp" class="logo flex flex-ai-c"> <i
+			<a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="logo flex flex-ai-c"> <i
 				class="fab fa-angellist"></i>
 			</a>
 
 			<nav class="menu-box-1">
 				<ul class="flex height-100p">
-					<li><a href="/blog/jsp/home/main.jsp" class="flex flex-ai-c height-100p">Home</a></li>
+					<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="flex flex-ai-c height-100p">Home</a></li>
 					<li><a href="#" class="flex flex-ai-c height-100p">Articles</a></li>
-					<li><a href="/blog/home/aboutMe" class="flex flex-ai-c height-100p">AboutMe</a></li>
+					<li><a href="${pageContext.request.contextPath}/home/aboutMe" class="flex flex-ai-c height-100p">AboutMe</a></li>
 					<li><a href="#" class="flex flex-ai-c height-100p">SNS</a>
 						<ul>
 							<li><a class="block" href="https://github.com/gudcjfdn13" target="_blank">GITHUB</a></li>
@@ -43,11 +43,11 @@
 		</div>
 	</div>
 	<div class="mobile-top-bar visible-on-sm-down flex flex-ai-c">
-		<a href="#" class="btn-toggle-mobile-side-bar">
+		s<a href="#" class="btn-toggle-mobile-side-bar">
 			<div></div>
 			<div></div>
 			<div></div>
-		</a> <a href="/blog/jsp/home/main.jsp"
+		</a> <a href="${pageContext.request.contextPath}/jsp/home/main.jsp"
 			class="logo flex flex-ai-c absolute-center absolute-middle"> <i
 			class="fab fa-angellist"></i>
 		</a>
@@ -55,9 +55,9 @@
 	<div class="mobile-side-bar flex flex-ai-c visible-on-sm-down">
 		<nav class="menu-box-1 flex-grow-1">
 			<ul>
-				<li><a href="/blog/jsp/home/main.jsp" class="block">Home</a></li>
+				<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="block">Home</a></li>
 				<li><a href="#" class="block">Articles</a></li>
-				<li><a href="/blog/home/aboutMe" class="block">About Me</a></li>
+				<li><a href="${pageContext.request.contextPath}/home/aboutMe" class="block">About Me</a></li>
 				<li><a href="#" class="block">SNS</a>
 					<ul>
 							<li><a class="block" href="https://github.com/gudcjfdn13" target="_blank">GITHUB</a></li>
