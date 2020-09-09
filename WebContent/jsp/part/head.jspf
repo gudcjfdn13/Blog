@@ -30,7 +30,7 @@
 			<nav class="menu-box-1">
 				<ul class="flex height-100p">
 					<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="flex flex-ai-c height-100p">Home</a></li>
-					<li><a href="#" class="flex flex-ai-c height-100p">Articles</a></li>
+					<li><a href="${pageContext.request.contextPath}/s/article/list" class="flex flex-ai-c height-100p">Articles</a></li>
 					<li><a href="${pageContext.request.contextPath}/s/home/aboutMe" class="flex flex-ai-c height-100p">AboutMe</a></li>
 					<li><a href="#" class="flex flex-ai-c height-100p">SNS</a>
 						<ul>
@@ -43,7 +43,7 @@
 		</div>
 	</div>
 	<div class="mobile-top-bar visible-on-sm-down flex flex-ai-c">
-		s<a href="#" class="btn-toggle-mobile-side-bar">
+		<a href="#" class="btn-toggle-mobile-side-bar">
 			<div></div>
 			<div></div>
 			<div></div>
@@ -56,7 +56,7 @@
 		<nav class="menu-box-1 flex-grow-1">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="block">Home</a></li>
-				<li><a href="#" class="block">Articles</a></li>
+				<li><a href="${pageContext.request.contextPath}/s/article/list" class="block">Articles</a></li>
 				<li><a href="${pageContext.request.contextPath}/s/home/aboutMe" class="block">About Me</a></li>
 				<li><a href="#" class="block">SNS</a>
 					<ul>

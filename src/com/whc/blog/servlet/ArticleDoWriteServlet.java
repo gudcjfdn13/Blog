@@ -1,4 +1,4 @@
-package com.sbs.java.blog.servlet;
+package com.whc.blog.servlet;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,48 +13,52 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.whc.blog.config.Config;
+import com.whc.blog.util.DBUtil;
+import com.whc.blog.util.SecSql;
+
 
 
 @WebServlet("/s/article/doWrite")
 public class ArticleDoWriteServlet extends HttpServlet {
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
-		String user = "root";
-		String pw = "";
-		String url = "jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull";
 		
-		String DriverName = "com.mysql.cj.jdbc.Driver";
 		Connection con = null;
 		
+		String title = request.getParameter("title");
+		String body = request.getParameter("body");
 		
+		SecSql sql = SecSql.from("INSERT INTO article");
+		sql.append("SET regDate = NOW()");
+		sql.append(", updateDate = NOW()");
+		sql.append(", title = ?", title);
+		sql.append(", body = ?", body);
 		
 		try {
-			Class.forName(DriverName);
-			con = DriverManager.getConnection(url, user, pw);
-			response.getWriter().append("연결됨");
+			Class.forName(Config.getDBDriverName());
+			con = DriverManager.getConnection(Config.getUrl(), Config.getUserId(), Config.getUserPw());
+			
+			int idx = DBUtil.insert(con, sql);
+			
+			response.getWriter().append(String.format("<script> alert('%d번째글 작성 완료'); location.replace('list'); </script>", idx));
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("연결안됨1");
+			System.err.printf("[드라이버 클래스 로딩 예외] : %s\n" + e.getMessage());
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("연결안됨2");
+			System.err.printf("[SQL 예외] : %s\n" + e.getMessage());
 		}finally {
 			try {
 				if (con != null) con.close();
 			} catch (Exception e2) {
-				e2.getStackTrace();
+				System.err.printf("[SQL 예외, Connection 닫기] : %s\n" + e2.getMessage());
 			}
 		}
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
-
 }

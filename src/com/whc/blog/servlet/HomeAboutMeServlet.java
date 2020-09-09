@@ -1,4 +1,4 @@
-package com.sbs.java.blog.servlet;
+package com.whc.blog.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/s/HomeMainServlet")
-public class HomeMainServlet extends HttpServlet {
+@WebServlet("/s/home/aboutMe")
+public class HomeAboutMeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html charset=UTF-8");
-		
-		request.getRequestDispatcher("/jsp/home/main.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsp/home/aboutMe.jsp").forward(request, response);
 	}
 
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
 
