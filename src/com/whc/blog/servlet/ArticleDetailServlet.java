@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.whc.blog.config.Config;
+import com.whc.blog.dto.Article;
 import com.whc.blog.util.DBUtil;
 import com.whc.blog.util.SecSql;
 
@@ -40,7 +41,7 @@ public class ArticleDetailServlet extends HttpServlet {
 			
 			Map<String, Object> articleRow = DBUtil.selectRow(con, sql);
 			
-			request.setAttribute("articleRow", articleRow);
+			request.setAttribute("articleRow", new Article(articleRow));
 			
 			request.getRequestDispatcher("/jsp/article/detail.jsp").forward(request, response);
 			
