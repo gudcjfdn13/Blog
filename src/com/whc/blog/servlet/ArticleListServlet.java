@@ -21,7 +21,7 @@ import com.whc.blog.util.SecSql;
 
 
 
-@WebServlet("/s/article/list")
+@WebServlet("/s/article/list2")
 public class ArticleListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");

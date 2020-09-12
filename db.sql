@@ -33,14 +33,12 @@ CREATE TABLE article (
     `body` TEXT NOT NULL
 );
 
-
-#1번글 생성
 INSERT INTO article
 SET regDate = NOW(),
 updateDate = NOW(),
 cateItemId = 6,
 displayStatus = 1,
 title = '블로그를 시작합니다',
-`body` = ''
+`body` = '# 내용\n## 내용 입니다'
 
 SELECT * FROM article

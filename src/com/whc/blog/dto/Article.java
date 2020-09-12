@@ -4,6 +4,8 @@ import java.util.Map;
 
 public class Article extends Dto {
 	private String updateDate, title, body;
+	private int cateItemId;
+
 
 	public Article() {}
 
@@ -16,8 +18,13 @@ public class Article extends Dto {
 
 	@Override
 	public String toString() {
-		return "Article [id=" + getId() + ", regDate=" + getRegDate() + ", updateDate=" + updateDate + ", title="
-				+ title + ", body=" + body + "]";
+		return "Article [ id = " + getId() + 
+				", regDate = " + getRegDate() + 
+				", updateDate = " + updateDate + 
+				", title = " + title + 
+				", body = " + body +
+				", cateItemId = " + cateItemId +
+				" ]";
 	}
 
 	public String getUpdateDate() {
@@ -43,5 +50,14 @@ public class Article extends Dto {
 	public void setBody(String body) {
 		this.body = body;
 	}
+
+	public int getCateItemId() {
+		return cateItemId;
+	}
+
+	public void setCateItemId(int cateItemId) {
+		this.cateItemId = cateItemId;
+	}
+
 
 }

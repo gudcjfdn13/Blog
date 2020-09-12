@@ -51,6 +51,4 @@
 	</script>
 </div>
 
-<a href="write">글쓰기</a>
-
 <%@ include file="/jsp/part/foot.jspf"%>
