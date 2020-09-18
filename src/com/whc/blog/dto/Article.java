@@ -6,25 +6,21 @@ public class Article extends Dto {
 	private String updateDate, title, body;
 	private int cateItemId;
 
-
-	public Article() {}
+	public Article() {
+	}
 
 	public Article(Map<String, Object> row) {
 		super(row);
 		this.updateDate = (String) row.get("updateDate");
+		this.cateItemId = (int) row.get("cateItemId");
 		this.title = (String) row.get("title");
 		this.body = (String) row.get("body");
 	}
 
 	@Override
 	public String toString() {
-		return "Article [ id = " + getId() + 
-				", regDate = " + getRegDate() + 
-				", updateDate = " + updateDate + 
-				", title = " + title + 
-				", body = " + body +
-				", cateItemId = " + cateItemId +
-				" ]";
+		return "Article [updateDate=" + updateDate + ", title=" + title + ", body=" + body + ", cateItemId="
+				+ cateItemId + ", toString()=" + super.toString() + "]";
 	}
 
 	public String getUpdateDate() {

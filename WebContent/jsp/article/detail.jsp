@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/jsp/part/head.jspf"%>
 <%
-	Article articleRow = (Article) request.getAttribute("articleRow");
+	Article articleRow = (Article) request.getAttribute("article");
 %>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">

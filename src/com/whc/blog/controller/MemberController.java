@@ -1,13 +1,21 @@
 package com.whc.blog.controller;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.whc.blog.service.ArticleService;
+
 public class MemberController extends Controller {
+	
+	public MemberController(Connection dbConn, String actionMethodName, HttpServletRequest request, HttpServletResponse response) {
+		super(dbConn, actionMethodName, request, response);
+	}
+	
 
 	@Override
-	public String doAction(String actionMethodName, HttpServletRequest request, HttpServletResponse response) {
-		System.out.printf("member 컨트롤러인 나는 %s 요청을 받았다.", actionMethodName);
+	public String doAction() {
 		return "";
 	}
 

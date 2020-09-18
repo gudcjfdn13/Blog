@@ -1,5 +1,11 @@
+<%@page import="com.whc.blog.dto.CateItem"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	List<CateItem> cateItems = (List<CateItem>) request.getAttribute("cateItems");
+%>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -7,14 +13,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/common.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/home/main.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resource/css/common.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resource/css/home/main.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/resource/js/home/main.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resource/js/home/main.js"></script>
 <script src="${pageContext.request.contextPath}/resource/js/common.js"></script>
 
 </head>
@@ -23,18 +32,35 @@
 
 	<div class="top-bar visible-on-md-up">
 		<div class="con height-100p flex flex-jc-sb">
-			<a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="logo flex flex-ai-c"> <i
-				class="fab fa-angellist"></i>
+			<a href="${pageContext.request.contextPath}/jsp/home/main.jsp"
+				class="logo flex flex-ai-c"> <i class="fab fa-angellist"></i>
 			</a>
 
 			<nav class="menu-box-1">
 				<ul class="flex height-100p">
-					<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="flex flex-ai-c height-100p">Home</a></li>
-					<li><a href="${pageContext.request.contextPath}/s/article/list" class="flex flex-ai-c height-100p">Articles</a></li>
-					<li><a href="${pageContext.request.contextPath}/s/home/aboutMe" class="flex flex-ai-c height-100p">AboutMe</a></li>
+					<li><a href="${pageContext.request.contextPath}/s/home/main"
+						class="flex flex-ai-c height-100p">Home</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/s/article/list"
+						class="flex flex-ai-c height-100p">Articles</a>
+						<ul>
+							<%
+								for (CateItem cateItem : cateItems) {
+							%>
+							<li><a
+								href="${pageContext.request.contextPath}/s/article/list?cateItemId=<%=cateItem.getId() %>"
+								class="block"><%=cateItem.getName()%></a></li>
+							<%
+								}
+							%>
+						</ul></li>
+					<li><a
+						href="${pageContext.request.contextPath}/s/home/aboutMe"
+						class="flex flex-ai-c height-100p">AboutMe</a></li>
 					<li><a href="#" class="flex flex-ai-c height-100p">SNS</a>
 						<ul>
-							<li><a class="block" href="https://github.com/gudcjfdn13" target="_blank">GITHUB</a></li>
+							<li><a class="block" href="https://github.com/gudcjfdn13"
+								target="_blank">GITHUB</a></li>
 							<li><a class="block" href="#">FACEBOOK</a></li>
 							<li><a class="block" href="#">INSTAR</a></li>
 						</ul></li>
@@ -55,14 +81,32 @@
 	<div class="mobile-side-bar flex flex-ai-c visible-on-sm-down">
 		<nav class="menu-box-1 flex-grow-1">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/jsp/home/main.jsp" class="block">Home</a></li>
-				<li><a href="${pageContext.request.contextPath}/s/article/list" class="block">Articles</a></li>
-				<li><a href="${pageContext.request.contextPath}/s/home/aboutMe" class="block">About Me</a></li>
+				<li><a href="${pageContext.request.contextPath}/s/home/main"
+					class="block">Home</a></li>
+				<li><a href="${pageContext.request.contextPath}/s/article/list"
+					class="block">Articles</a>
+					<ul>
+						<li><a
+							href="${pageContext.request.contextPath}/s/article/list"
+							class="block">전체</a></li>
+						<%
+							for (CateItem cateItem : cateItems) {
+						%>
+						<li><a
+							href="${pageContext.request.contextPath}/s/article/list?cateItemId=<%=cateItem.getId() %>"
+							class="block"><%=cateItem.getName()%></a></li>
+						<%
+							}
+						%>
+					</ul></li>
+				<li><a href="${pageContext.request.contextPath}/s/home/aboutMe"
+					class="block">About Me</a></li>
 				<li><a href="#" class="block">SNS</a>
 					<ul>
-							<li><a class="block" href="https://github.com/gudcjfdn13" target="_blank">GITHUB</a></li>
-							<li><a class="block" href="#">FACEBOOK</a></li>
-							<li><a class="block" href="#">INSTAR</a></li>
+						<li><a class="block" href="https://github.com/gudcjfdn13"
+							target="_blank">GITHUB</a></li>
+						<li><a class="block" href="#">FACEBOOK</a></li>
+						<li><a class="block" href="#">INSTAR</a></li>
 					</ul></li>
 			</ul>
 		</nav>
